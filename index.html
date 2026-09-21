@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ROO redesign preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #141312; --grey: #4A463F; --muted: #6A645B; --line: #E2DED6; --paper: #FBFAF9; --blue: #1F43D8; --yellow: #FFD200; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: Dosis, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 48px 16px 96px; }
+  .brand { font-size: 32px; font-weight: 800; color: var(--blue); letter-spacing: .02em; }
+  h1 { margin: 12px 0 0; font-size: 48px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em; }
+  .lede { margin: 16px 0 0; max-width: 36em; font-size: 18px; line-height: 1.5; font-weight: 500; color: var(--grey); }
+  .flag { display: inline-block; margin-top: 16px; padding: 6px 12px; border-radius: 6px; background: var(--yellow); font-size: 14px; font-weight: 800; }
+  h2 { margin: 48px 0 16px; font-size: 14px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .card { display: flex; flex-direction: column; gap: 4px; min-height: 96px; padding: 20px; border-radius: 12px; background: #FFFFFF; border: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+  .card:hover { border-color: var(--blue); }
+  .card:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+  .t { font-size: 20px; font-weight: 800; }
+  .d { font-size: 15px; font-weight: 600; color: var(--muted); }
+  @media (max-width: 600px) { h1 { font-size: 36px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">ROO</div>
+  <h1>Site redesign preview</h1>
+  <p class="lede">The landing page, mat product page, shop page, cart and email pop-up from the September redesign, plus the design studies behind them. Buttons link between pages; the product gallery and setup picker work.</p>
+  <span class="flag">Draft for review. Not the live site, and nothing here can be bought.</span>
+  <h2>Pages</h2><div class="grid"><a class="card" href="landing-desktop.html"><span class="t">Landing page</span><span class="d">Desktop</span></a><a class="card" href="landing-mobile.html"><span class="t">Landing page</span><span class="d">Mobile</span></a><a class="card" href="product-desktop.html"><span class="t">Mat product page</span><span class="d">Desktop</span></a><a class="card" href="product-mobile.html"><span class="t">Mat product page</span><span class="d">Mobile</span></a><a class="card" href="shop-desktop.html"><span class="t">Shop page</span><span class="d">Desktop</span></a><a class="card" href="shop-mobile.html"><span class="t">Shop page</span><span class="d">Mobile</span></a><a class="card" href="cart-mobile.html"><span class="t">Cart</span><span class="d">Mobile</span></a><a class="card" href="email-popup-mobile.html"><span class="t">10% email pop-up</span><span class="d">Mobile</span></a></div><h2>Design studies</h2><div class="grid"><a class="card" href="above-the-fold.html"><span class="t">Above the fold on a phone</span><span class="d">Comparison</span></a><a class="card" href="button-options.html"><span class="t">The button, five ways</span><span class="d">Comparison</span></a><a class="card" href="offer-framings.html"><span class="t">The offer, three ways</span><span class="d">Comparison</span></a></div>
+</div>
+</body>
+</html>

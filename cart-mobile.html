@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cart (mobile) · ROO redesign preview</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Dosis, system-ui, sans-serif; -webkit-font-smoothing: antialiased; background: #FFFFFF; color: #141312; }
+    a { color: #12309F; }
+    a:hover { color: #0B2073; }
+    p { margin: 0; }
+    h1, h2, h3 { margin: 0; }
+  </style>
+
+<style>
+  body { background: #E9E6E0; }
+  .preview-bar { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: #141312; color: #FFFFFF; font: 600 14px/1.3 Dosis, system-ui, sans-serif; }
+  .preview-bar a { color: #FFD200; text-decoration: none; }
+  .preview-bar span { color: #D4D4D4; }
+  #dc-root { display: flex; justify-content: center; }
+  #dc-root > * { flex-shrink: 0; box-shadow: 0 10px 24px rgba(0,0,0,.15); }
+</style>
+</head>
+<body>
+<div class="preview-bar"><a href="index.html">← All pages</a><span>Cart · Mobile</span></div>
+<template id="dc-template">
+
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column;">
+
+  <!-- drawer header -->
+  <div style="height: 60px; flex-shrink: 0; box-sizing: border-box; padding: 0 6px 0 16px; border-bottom: 1px solid #EDEAE4; display: flex; align-items: center; justify-content: space-between;">
+    <h1 style="font-size: 22px; font-weight: 800;">Your cart</h1>
+    <a href="shop-mobile.html" aria-label="Close cart" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141312" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </a>
+  </div>
+
+  <!-- line item -->
+  <div style="flex-shrink: 0; box-sizing: border-box; padding: 18px 16px; border-bottom: 1px solid #EDEAE4; display: flex; gap: 14px;">
+    <div style="width: 88px; height: 88px; flex-shrink: 0; border-radius: 10px; overflow: hidden; background: #F4F1EC;">
+      <img src="assets/e83cc622b2e16569b24785467dbc8bcc.jpg" alt="The ROO mat with the fitted board on top" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <div style="flex-grow: 1; min-width: 0;">
+      <div style="display: flex; justify-content: space-between; gap: 10px;">
+        <p style="font-size: 16px; line-height: 1.3; font-weight: 800;">ROO Mat + fitted board</p>
+        <p style="font-size: 16px; font-weight: 800;">$54.99</p>
+      </div>
+      <p style="margin-top: 3px; font-size: 13px; font-weight: 700; color: #0F6B4F;">Board at our cost, $10</p>
+      <div style="margin-top: 10px; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; border: 1px solid #E2DED6; border-radius: 8px;">
+          <button type="button" aria-label="Decrease quantity" style="width: 44px; height: 40px; border: 0; background: transparent; font-family: Dosis, sans-serif; font-size: 20px; font-weight: 600; color: #141312; cursor: pointer;">−</button>
+          <span style="width: 28px; text-align: center; font-size: 16px; font-weight: 700;">1</span>
+          <button type="button" aria-label="Increase quantity" style="width: 44px; height: 40px; border: 0; background: transparent; font-family: Dosis, sans-serif; font-size: 20px; font-weight: 600; color: #141312; cursor: pointer;">+</button>
+        </div>
+        <button type="button" style="height: 40px; border: 0; background: transparent; font-family: Dosis, sans-serif; font-size: 14px; font-weight: 600; color: #6A645B; text-decoration: underline; cursor: pointer;">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- totals -->
+  <div style="flex-shrink: 0; box-sizing: border-box; padding: 18px 16px 0; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span style="font-size: 16px; font-weight: 600; color: #4A463F;">Subtotal</span>
+      <span style="font-size: 16px; font-weight: 700;">$54.99</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span style="font-size: 16px; font-weight: 600; color: #4A463F;">Shipping</span>
+      <span style="font-size: 16px; font-weight: 800; color: #0F6B4F;">Free</span>
+    </div>
+    <p style="font-size: 14px; line-height: 1.45; font-weight: 500; color: #6A645B;">Standard US delivery, [X to Y] business days.</p>
+
+    <sc-if value="{{showExpedited}}" hint-placeholder-val="{{ true }}">
+      <div style="box-sizing: border-box; padding: 12px 14px; border-radius: 10px; background: #F3F6FF; display: flex; align-items: center; gap: 10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F43D8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <p style="font-size: 14px; line-height: 1.4; font-weight: 600; color: #141312;">Need it sooner? <span style="font-weight: 800;">2-day shipping is $5</span>, pick it at checkout.</p>
+      </div>
+    </sc-if>
+  </div>
+
+  <!-- checkout -->
+  <div style="flex-grow: 1; box-sizing: border-box; padding: 18px 16px 20px; display: flex; flex-direction: column; justify-content: flex-end;">
+    <p style="font-size: 14px; font-weight: 600; color: #4A463F; text-align: center;">Free US shipping. Taxes calculated at checkout.</p>
+    <button type="button" style="margin-top: 12px; width: 100%; height: 56px; border: 0; border-radius: 10px; background: #1F43D8; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 18px; font-weight: 800; cursor: pointer;">Check out, $54.99</button>
+    <div style="margin-top: 10px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+      <button type="button" style="height: 44px; border: 0; border-radius: 8px; background: #5A31F4; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">shop</button>
+      <button type="button" style="height: 44px; border: 0; border-radius: 8px; background: #FFC439; color: #003087; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">PayPal</button>
+      <button type="button" style="height: 44px; border: 0; border-radius: 8px; background: #141312; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">G Pay</button>
+    </div>
+    <p style="margin-top: 12px; font-size: 13px; font-weight: 600; color: #6A645B; text-align: center;">30-day money back. We pay the return shipping.</p>
+  </div>
+
+</div>
+</template>
+<div id="dc-root"></div>
+<script id="dc-logic" type="text/plain" data-props='{"expedited":{"editor":"boolean","default":true,"section":"Shipping"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { showExpedited: this.props.expedited ?? true };
+  }
+}
+</script>
+<script src="dc-lite.js"></script>
+</body>
+</html>

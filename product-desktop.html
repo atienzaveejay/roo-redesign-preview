@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mat product page (desktop) · ROO redesign preview</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Dosis, system-ui, sans-serif; -webkit-font-smoothing: antialiased; background: #FFFFFF; color: #141312; }
+    a { color: #12309F; }
+    a:hover { color: #0B2073; }
+    p { margin: 0; }
+    h1, h2, h3 { margin: 0; }
+    ul { margin: 0; }
+  </style>
+
+<style>
+  body { background: #FFFFFF; }
+  .preview-bar { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: #141312; color: #FFFFFF; font: 600 14px/1.3 Dosis, system-ui, sans-serif; }
+  .preview-bar a { color: #FFD200; text-decoration: none; }
+  .preview-bar span { color: #D4D4D4; }
+  #dc-root { display: flex; justify-content: center; }
+  #dc-root > * { flex-shrink: 0;  }
+</style>
+</head>
+<body>
+<div class="preview-bar"><a href="index.html">← All pages</a><span>Mat product page · Desktop</span></div>
+<template id="dc-template">
+
+
+<div style="width: 1280px; height: 2560px; box-sizing: border-box; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column;">
+
+  <!-- header -->
+  <div style="height: 68px; flex-shrink: 0; box-sizing: border-box; padding: 0 48px; border-bottom: 1px solid #EDEAE4; display: flex; align-items: center; justify-content: space-between;">
+    <div style="font-size: 30px; font-weight: 800; letter-spacing: 0.02em; color: #1F43D8;">ROO</div>
+    <div style="display: flex; gap: 28px;">
+      <a href="landing-desktop.html" style="font-size: 15px; font-weight: 600; color: #4A463F; text-decoration: none;">Home</a>
+      <a href="shop-desktop.html" style="font-size: 15px; font-weight: 600; color: #4A463F; text-decoration: none;">Shop</a>
+      <a href="#faq" style="font-size: 15px; font-weight: 600; color: #4A463F; text-decoration: none;">FAQs</a>
+      <a href="#guides" style="font-size: 15px; font-weight: 600; color: #4A463F; text-decoration: none;">Buying Guides</a>
+      <a href="#tips" style="font-size: 15px; font-weight: 600; color: #4A463F; text-decoration: none;">Kitchen Tips</a>
+      <a href="#about" style="font-size: 15px; font-weight: 600; color: #4A463F; text-decoration: none;">About</a>
+    </div>
+    <button type="button" aria-label="Open cart" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141312" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    </button>
+  </div>
+
+  <!-- offer ribbon -->
+  <div style="flex-shrink: 0; height: 44px; background: #FFD200; display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <span style="font-size: 16px; font-weight: 800; color: #141312;">{{ribbonText}}</span>
+    <span style="font-size: 15px; font-weight: 600; color: #4A3D00;">$10 instead of $19.99. We make nothing on it.</span>
+  </div>
+
+  <!-- buy area -->
+  <div style="flex-shrink: 0; box-sizing: border-box; padding: 44px 48px 0; display: flex; gap: 48px;">
+
+    <!-- gallery -->
+    <div style="width: 600px; flex-shrink: 0;">
+      <div style="width: 600px; height: 600px; box-sizing: border-box; border-radius: 14px; border: 1px solid #EDEAE4; overflow: hidden; background: #FFFFFF;">
+        <img src="{{mainSrc}}" alt="{{mainAlt}}" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+      </div>
+      <div style="margin-top: 12px; display: flex; gap: 8px;">
+        <sc-for list="{{gallery}}" as="g" hint-placeholder-count="7">
+          <button type="button" onClick="{{g.pick}}" aria-label="{{g.label}}" style="{{g.thumbStyle}}"><img src="{{g.src}}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></button>
+        </sc-for>
+      </div>
+      <p style="margin-top: 12px; font-size: 14px; font-weight: 500; color: #6A645B;">{{galleryCaption}}</p>
+    </div>
+
+    <!-- buy box -->
+    <div style="flex-grow: 1; min-width: 0;">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #6A645B;">ROO KITCHEN</div>
+      <h1 style="margin-top: 10px; font-size: 34px; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em;">ROO Silicone Cutting Board Mat with Scrap Pouch</h1>
+      <p style="margin-top: 12px; font-size: 19px; line-height: 1.35; font-weight: 700; color: #141312;">Cleanup is lift, tip, rinse.</p>
+      <p style="margin-top: 10px; font-size: 17px; line-height: 1.5; font-weight: 500; color: #4A463F;">A food-safe silicone mat that sits under the board you already own. It catches every peel, stem and skin as you cut, so there is nothing on the counter when you finish.</p>
+
+      <div style="margin-top: 14px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 16px; letter-spacing: 0.06em; color: #E0A400;">★★★★★</span>
+        <span style="font-size: 16px; font-weight: 700;">5.0</span>
+        <span style="font-size: 15px; font-weight: 500; color: #6A645B;">from 9 verified reviews</span>
+      </div>
+
+      <h2 style="margin-top: 26px; font-size: 18px; font-weight: 800;">Choose your setup</h2>
+
+      <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px;">
+        <button type="button" onClick="{{pickBundle}}" aria-pressed="{{bundleSelected}}" style="{{bundleCardStyle}}">
+          <span style="{{bundleRingStyle}}"><span style="{{bundleDotStyle}}"></span></span>
+          <span style="width: 62px; height: 62px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #F4F1EC; display: block;">
+            <img src="assets/e83cc622b2e16569b24785467dbc8bcc.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </span>
+          <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px; text-align: left; min-width: 0;">
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 18px; font-weight: 800; color: #141312;">Mat + fitted board</span>
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: #141312; background: #FFD200; padding: 3px 8px; border-radius: 4px; white-space: nowrap;">{{badgeLabel}}</span>
+            </span>
+            <span style="display: flex; align-items: baseline; gap: 8px;">
+              <span style="font-size: 21px; font-weight: 800; color: #141312;">{{bundlePrice}}</span>
+              <span style="font-size: 15px; font-weight: 600; color: #8A847A; text-decoration: line-through;">$64.98</span>
+            </span>
+            <span style="font-size: 14px; line-height: 1.4; font-weight: 600; color: #0F6B4F;">{{bundleNote}}</span>
+          </span>
+        </button>
+
+        <button type="button" onClick="{{pickMat}}" aria-pressed="{{matSelected}}" style="{{matCardStyle}}">
+          <span style="{{matRingStyle}}"><span style="{{matDotStyle}}"></span></span>
+          <span style="width: 62px; height: 62px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #F4F1EC; display: block;">
+            <img src="assets/f50c0391c4ed7d178e3d0bf184a99718.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </span>
+          <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px; text-align: left; min-width: 0;">
+            <span style="font-size: 18px; font-weight: 800; color: #141312;">Mat only</span>
+            <span style="font-size: 21px; font-weight: 800; color: #141312;">$44.99</span>
+            <span style="font-size: 14px; line-height: 1.4; font-weight: 500; color: #6A645B;">Use the board you already own. Fits boards up to 16 inches wide.</span>
+          </span>
+        </button>
+      </div>
+
+      <div style="{{stockStripStyle}}">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <span style="display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; color: #8A3A12;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4611F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M12 8v5"/><path d="M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg>
+            {{stockHeadline}}</span>
+          <span style="font-size: 13px; font-weight: 600; color: #A8875F; white-space: nowrap;">{{stockSide}}</span>
+        </div>
+        <div style="margin-top: 10px; height: 6px; border-radius: 3px; background: #F0DCC4; overflow: hidden;">
+          <span style="display: block; width: 22%; height: 100%; background: #C4611F;"></span>
+        </div>
+        <p style="margin-top: 9px; font-size: 14px; line-height: 1.4; font-weight: 500; color: #6A645B;">{{stockFoot}}</p>
+      </div>
+
+      <button type="button" style="margin-top: 16px; width: 100%; height: 58px; border: 0; border-radius: 10px; background: #1F43D8; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 19px; font-weight: 800; cursor: pointer;">{{ctaLabel}}</button>
+      <div style="margin-top: 10px; display: flex; gap: 10px;">
+        <button type="button" style="flex-grow: 1; height: 46px; border: 0; border-radius: 8px; background: #5A31F4; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">shop</button>
+        <button type="button" style="flex-grow: 1; height: 46px; border: 0; border-radius: 8px; background: #FFC439; color: #10265C; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">PayPal</button>
+        <button type="button" style="flex-grow: 1; height: 46px; border: 0; border-radius: 8px; background: #141312; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">G Pay</button>
+      </div>
+
+      <div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 22px;">
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #4A463F;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free US shipping</span>
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #4A463F;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>30-day money back</span>
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #4A463F;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free returns</span>
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #4A463F;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Food-safe silicone</span>
+      </div>
+
+      <div style="margin-top: 20px; box-sizing: border-box; padding: 16px 18px; border-radius: 10px; background: #FBFAF9; border: 1px solid #EDEAE4;">
+        <div style="font-size: 15px; font-weight: 800;">{{boxHeading}}</div>
+        <ul style="margin-top: 10px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px;">
+          <li style="display: flex; gap: 9px; font-size: 15px; line-height: 1.4; font-weight: 500; color: #4A463F;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F43D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>The ROO mat with the 7-cup scrap pouch built in</span>
+          </li>
+          <li style="display: flex; gap: 9px; font-size: 15px; line-height: 1.4; font-weight: 500; color: #4A463F;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F43D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>A reusable drawstring bag for the drawer or a road trip</span>
+          </li>
+          <li style="{{boardLineStyle}}">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F43D8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>The fitted rubberwood board, sized to the mat</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- reason why band -->
+  <div style="flex-shrink: 0; margin-top: 52px; box-sizing: border-box; padding: 40px 48px; background: #FFF9E0; border-top: 1px solid #F2E3A8; border-bottom: 1px solid #F2E3A8; display: flex; gap: 48px; align-items: center;">
+    <div style="width: 300px; height: 210px; flex-shrink: 0; border-radius: 12px; overflow: hidden; background: #FFFFFF;">
+      <img src="assets/1ac77f5319abe6eba3b829616ed362a6.jpg" alt="The fitted ROO rubberwood cutting board" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <div style="flex-grow: 1; min-width: 0;">
+      <div style="display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #141312; background: #FFD200; padding: 4px 9px; border-radius: 4px;">THE OFFER</div>
+      <h2 style="margin-top: 12px; font-size: 32px; line-height: 1.12; font-weight: 800; letter-spacing: -0.01em;">{{reasonHeading}}</h2>
+      <p style="margin-top: 12px; max-width: 720px; font-size: 17px; line-height: 1.55; font-weight: 500; color: #4A463F;">{{reasonBody}}</p>
+      <p style="{{reasonEndStyle}}">{{reasonEnd}}</p>
+      <p style="margin-top: 12px; font-size: 15px; font-weight: 700; color: #141312;">Steve, Founder, ROO</p>
+    </div>
+  </div>
+
+  <!-- how it works -->
+  <div style="flex-shrink: 0; box-sizing: border-box; padding: 48px;">
+    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #6A645B;">HOW IT WORKS</div>
+    <h2 style="margin-top: 8px; font-size: 34px; font-weight: 800; letter-spacing: -0.01em;">Three moves. Zero mess.</h2>
+    <div style="margin-top: 26px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+      <div>
+        <div style="position: relative; height: 291px; border-radius: 14px; overflow: hidden; background: #2A2825;"><video src="assets/f657df3ade9c64990a815deeea845902.mp4" poster="assets/2d61bdfefc701549b9ddb36f12134539.jpg" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-label="Unrolling the ROO mat on the counter with the pouch over the edge" style="width: 100%; height: 100%; object-fit: cover; display: block;"></video><span style="position: absolute; left: 12px; top: 12px; width: 38px; height: 38px; border-radius: 50%; background: #1F43D8; color: #FFFFFF; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center;">1</span></div>
+        <h3 style="margin-top: 18px; font-size: 20px; font-weight: 800;">Lay it down</h3>
+        <p style="margin-top: 7px; font-size: 16px; line-height: 1.5; font-weight: 500; color: #4A463F;">Unroll ROO on the counter with the pouch over the edge. It grips on contact and holds your board steady. No hooks, no clips, nothing to install.</p>
+      </div>
+      <div>
+        <div style="position: relative; height: 291px; border-radius: 14px; overflow: hidden; background: #2A2825;"><video src="assets/d9f16cb519e4287dd031aecc035ced80.mp4" poster="assets/175b6bef371241e57a09d36610e2e18d.jpg" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-label="Chopping on the board and sweeping scraps into the pouch" style="width: 100%; height: 100%; object-fit: cover; display: block;"></video><span style="position: absolute; left: 12px; top: 12px; width: 38px; height: 38px; border-radius: 50%; background: #1F43D8; color: #FFFFFF; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center;">2</span></div>
+        <h3 style="margin-top: 18px; font-size: 20px; font-weight: 800;">Chop and sweep</h3>
+        <p style="margin-top: 7px; font-size: 16px; line-height: 1.5; font-weight: 500; color: #4A463F;">Push peels, ends and skins straight off the board into the pouch as you go. It holds up to 7 cups, a full meal's prep without stopping.</p>
+      </div>
+      <div>
+        <div style="position: relative; height: 291px; border-radius: 14px; overflow: hidden; background: #2A2825;"><video src="assets/6d5bb3fff94c3487bd9a9e501f6e8626.mp4" poster="assets/3a90fdbb4b0909e6cde6c17bf49a5fb5.jpg" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-label="Rolling the mat up into its drawstring bag" style="width: 100%; height: 100%; object-fit: cover; display: block;"></video><span style="position: absolute; left: 12px; top: 12px; width: 38px; height: 38px; border-radius: 50%; background: #1F43D8; color: #FFFFFF; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center;">3</span></div>
+        <h3 style="margin-top: 18px; font-size: 20px; font-weight: 800;">Empty and roll away</h3>
+        <p style="margin-top: 7px; font-size: 16px; line-height: 1.5; font-weight: 500; color: #4A463F;">One trip to the bin. Rinse it, or put it on the dishwasher's top rack, then roll it into its bag and back in the drawer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- comparison -->
+  <div style="flex-grow: 1; box-sizing: border-box; padding: 0 48px 48px; display: flex; gap: 48px;">
+    <div style="width: 380px; flex-shrink: 0;">
+      <h2 style="font-size: 32px; line-height: 1.12; font-weight: 800; letter-spacing: -0.01em;">&ldquo;Why not just use a bowl?&rdquo;</h2>
+      <p style="margin-top: 12px; font-size: 16px; line-height: 1.5; font-weight: 500; color: #4A463F;">Fair question. It is the thing most people already do, and it is the thing ROO has to beat.</p>
+    </div>
+    <div style="flex-grow: 1; border: 1px solid #E2DED6; border-radius: 12px; overflow: hidden; align-self: flex-start;">
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #F4F1EC; border-bottom: 1px solid #E2DED6;">
+        <div style="box-sizing: border-box; padding: 12px 18px; font-size: 14px; font-weight: 700; color: #6A645B; border-right: 1px solid #E2DED6;">A bowl on the counter</div>
+        <div style="box-sizing: border-box; padding: 12px 18px; font-size: 14px; font-weight: 800; color: #1F43D8;">ROO</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-bottom: 1px solid #EDEAE4;">
+        <div style="box-sizing: border-box; padding: 15px 18px; font-size: 15px; line-height: 1.4; font-weight: 500; color: #6A645B; border-right: 1px solid #EDEAE4;">Takes up counter space you were already short on</div>
+        <div style="box-sizing: border-box; padding: 15px 18px; font-size: 15px; line-height: 1.4; font-weight: 600; color: #141312;">The pouch hangs off the edge, so it costs you no extra space</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-bottom: 1px solid #EDEAE4;">
+        <div style="box-sizing: border-box; padding: 15px 18px; font-size: 15px; line-height: 1.4; font-weight: 500; color: #6A645B; border-right: 1px solid #EDEAE4;">Scraps miss the rim and land on the counter</div>
+        <div style="box-sizing: border-box; padding: 15px 18px; font-size: 15px; line-height: 1.4; font-weight: 600; color: #141312;">Scraps go straight off the board into the pouch</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-bottom: 1px solid #EDEAE4;">
+        <div style="box-sizing: border-box; padding: 15px 18px; font-size: 15px; line-height: 1.4; font-weight: 500; color: #6A645B; border-right: 1px solid #EDEAE4;">Slides when you knock it</div>
+        <div style="box-sizing: border-box; padding: 15px 18px; font-size: 15px; line-height: 1.4; font-weight: 600; color: #141312;">Grips the counter and holds the board still too</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));">
+        <div style="box-sizing: border-box; padding: 15px 18px; font-size: 15px; line-height: 1.4; font-weight: 500; color: #6A645B; border-right: 1px solid #EDEAE4;">One more thing to wash and store</div>
+        <div style="box-sizing: border-box; padding: 15px 18px; font-size: 15px; line-height: 1.4; font-weight: 600; color: #141312;">Top-rack dishwasher, then rolls into its own bag</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</template>
+<div id="dc-root"></div>
+<script id="dc-logic" type="text/plain" data-props='{"framing":{"editor":"enum","default":"atcost","options":["atcost","free","saving"],"section":"Offer"},"scarcity":{"editor":"enum","default":"stock","options":["stock","date","off"],"section":"Offer"},"$preview":{"width":1280,"height":2560}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { pick: 'bundle', img: 0 };
+  }
+  renderVals() {
+    const framing = this.props.framing ?? 'atcost';
+    const scarcity = this.props.scarcity ?? 'stock';
+    const isBundle = this.state.pick === 'bundle';
+
+    const scarcities = {
+      stock: {
+        ribbon: 'Board at our cost, while these last',
+        headline: 'Only [N] boards left at cost',
+        side: 'of [STARTING STOCK]',
+        foot: 'The offer runs until the boards are gone. We are not restocking them at this price.',
+        end: 'When these boards are gone, the board is $19.99 again.'
+      },
+      date: {
+        ribbon: 'Board at our cost until [END DATE]',
+        headline: 'Offer ends [END DATE]',
+        side: '[N] days left',
+        foot: 'After that the fitted board goes back to its normal price alongside the mat.',
+        end: 'After [END DATE] the board is $19.99 again.'
+      },
+      off: { ribbon: 'Buy the mat, get the fitted board at our cost', headline: '', side: '', foot: '', end: '' }
+    };
+    const scar = scarcities[scarcity] ?? scarcities.stock;
+    const showStrip = scarcity !== 'off';
+
+    const offers = {
+      atcost: {
+        price: '$54.99',
+        badge: 'BOARD AT COST',
+        note: 'Board added at our cost: $10, not $19.99. We make nothing on it.',
+        heading: 'Why the board goes in at our cost',
+        body: 'So you get the full ROO setup from day one, especially if you are starting out without a board you trust yet. $10 instead of $19.99, which is our cost. We earn nothing on it.'
+      },
+      free: {
+        price: '$44.99',
+        badge: 'BOARD INCLUDED FREE',
+        note: 'The fitted board is free. Same price as the mat on its own.',
+        heading: 'Why the board is free right now',
+        body: 'So you get the full ROO setup from day one, especially if you are starting out without a board you trust yet. It is $19.99 on its own. Right now it is free.'
+      },
+      saving: {
+        price: '$54.99',
+        badge: 'SAVE $9.99',
+        note: 'Save $9.99 when the mat and the board go together.',
+        heading: 'Why people take the pair',
+        body: 'The full ROO setup in one go, especially if you are starting out without a board you trust yet. $54.99 instead of $64.98.'
+      }
+    };
+    const offer = offers[framing] ?? offers.atcost;
+
+    const cardBase = 'width: 100%; box-sizing: border-box; padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px; cursor: pointer; font-family: Dosis, sans-serif; text-align: left;';
+    const on = cardBase + ' border: 2px solid #1F43D8; background: #F3F6FF;';
+    const off = cardBase + ' border: 2px solid #E2DED6; background: #FFFFFF;';
+
+    const ringBase = 'width: 24px; height: 24px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-sizing: border-box;';
+    const ringOn = ringBase + ' border: 2px solid #1F43D8;';
+    const ringOff = ringBase + ' border: 2px solid #C9C3B8;';
+    const dotBase = 'width: 12px; height: 12px; border-radius: 50%; display: block;';
+    const dotOn = dotBase + ' background: #1F43D8;';
+    const dotOff = dotBase + ' background: transparent;';
+
+    const boxLineBase = 'display: flex; gap: 9px; font-size: 15px; line-height: 1.4; font-weight: 500; color: #4A463F;';
+
+    const photos = [{src:'assets/71d4d1b5b55c4da983633f45128b3488.jpg',alt:"The ROO silicone mat with its built-in scrap pouch, on white"},{src:'assets/0ed375250352db2160e553152928363a.jpg',alt:"Carrot peels swept off the board into the ROO pouch. Scraps go straight in."},{src:'assets/32ae874e23f983e9a5c68cb2b7946003.jpg',alt:"A home cook prepping at the counter with the ROO pouch over the edge. The counter stays clear."},{src:'assets/ea486be0547a0081e77cd176b99dfb6f.jpg',alt:"ROO mat dimensions: fits any board up to 16 inches, 13.5 by 10 inches overall, pouch 3.25 inches deep"},{src:'assets/48383102b2a4cb70c5ee726285bff111.jpg',alt:"Potato peels filling the 7-cup ROO pouch. A full meal of scraps before you empty it once."},{src:'assets/6e28a35f49b156c9f8ed1a34d46eba7e.jpg',alt:"What's included: one ROO mat and one drawstring bag. Cutting board not included."},{src:'assets/52db53bf85450bc317117dc7d104121f.jpg',alt:"Care in three steps: lift it out, tip it into the bin, rinse"}];
+    const img = this.state.img ?? 0;
+    const go = (n) => this.setState({ img: (n + photos.length) % photos.length });
+    const gallery = photos.map((p, i) => ({
+      src: p.src,
+      label: 'Show photo ' + (i + 1) + ' of ' + photos.length,
+      pick: () => go(i),
+      thumbStyle: 'width: 76px; height: 76px; flex-shrink: 0; padding: 0; border-radius: 10px; overflow: hidden; background: #FFFFFF; cursor: pointer; box-sizing: border-box; ' + (i === img ? 'border: 2px solid #1F43D8;' : 'border: 1px solid #E2DED6;'),
+      dotStyle: 'width: 8px; height: 8px; border-radius: 50%; display: block; background: ' + (i === img ? '#141312' : '#C9C3B8') + ';'
+    }));
+    return {
+      mainSrc: photos[img].src,
+      mainAlt: photos[img].alt,
+      gallery: gallery,
+      prevImg: () => go(img - 1),
+      nextImg: () => go(img + 1),
+      bundleSelected: isBundle,
+      matSelected: !isBundle,
+      pickBundle: () => this.setState({ pick: 'bundle' }),
+      pickMat: () => this.setState({ pick: 'mat' }),
+
+      bundleCardStyle: isBundle ? on : off,
+      matCardStyle: isBundle ? off : on,
+      bundleRingStyle: isBundle ? ringOn : ringOff,
+      matRingStyle: isBundle ? ringOff : ringOn,
+      bundleDotStyle: isBundle ? dotOn : dotOff,
+      matDotStyle: isBundle ? dotOff : dotOn,
+
+      bundlePrice: offer.price,
+      bundleNote: offer.note,
+      badgeLabel: offer.badge,
+
+      reasonHeading: offer.heading,
+      reasonBody: offer.body,
+
+      ribbonText: scar.ribbon,
+      stockHeadline: scar.headline,
+      stockSide: scar.side,
+      stockFoot: scar.foot,
+      stockStripStyle: 'display: none;',
+      reasonEnd: scar.end,
+      reasonEndStyle: showStrip
+        ? 'margin-top: 12px; font-size: 16px; line-height: 1.5; font-weight: 700; color: #8A3A12;'
+        : 'display: none;',
+
+      ctaLabel: isBundle ? ('Add Mat + Board, ' + offer.price) : 'Add Mat only, $44.99',
+      ctaSubLine: isBundle ? 'Board at our cost. $64.98 bought separately.' : 'Adds the mat on its own.',
+      ctaSubStyle: isBundle
+        ? 'margin-top: 7px; font-size: 13px; font-weight: 600; color: #0F6B4F; text-align: center;'
+        : 'margin-top: 7px; font-size: 13px; font-weight: 500; color: #6A645B; text-align: center;',
+
+      galleryCaption: isBundle
+        ? 'Photos show the mat. Your selection adds the fitted rubberwood board.'
+        : 'Cutting board not included with the mat.',
+
+      boxHeading: 'What turns up in the box',
+      boardLineStyle: isBundle ? boxLineBase : boxLineBase + ' opacity: 0.32; text-decoration: line-through;'
+    };
+  }
+}
+</script>
+<script src="dc-lite.js"></script>
+</body>
+</html>
