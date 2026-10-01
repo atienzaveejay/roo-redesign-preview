@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cart with Priority shipping (mobile) · ROO redesign preview</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Dosis, system-ui, sans-serif; -webkit-font-smoothing: antialiased; background: #FFFFFF; color: #141312; }
+    a { color: #12309F; }
+    a:hover { color: #0B2073; }
+    p { margin: 0; }
+    h1, h2, h3 { margin: 0; }
+  </style>
+
+<style>
+  body { background: #E9E6E0; }
+  .preview-bar { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: #141312; color: #FFFFFF; font: 600 14px/1.3 Dosis, system-ui, sans-serif; }
+  .preview-bar a { color: #FFD200; text-decoration: none; }
+  .preview-bar span { color: #D4D4D4; }
+  #dc-root { display: flex; justify-content: center; }
+  #dc-root > * { flex-shrink: 0; box-shadow: 0 10px 24px rgba(0,0,0,.15); }
+</style>
+</head>
+<body>
+<div class="preview-bar"><a href="index.html">← All pages</a><span>Cart with Priority shipping · Mobile</span></div>
+<template id="dc-template">
+
+
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column;">
+
+  <div style="height: 60px; flex-shrink: 0; box-sizing: border-box; padding: 0 6px 0 16px; border-bottom: 1px solid #EDEAE4; display: flex; align-items: center; justify-content: space-between;">
+    <h1 style="font-size: 22px; font-weight: 800;">Your cart</h1>
+    <a href="october-product-mobile.html" aria-label="Close cart" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141312" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </a>
+  </div>
+
+  <!-- line item -->
+  <div style="flex-shrink: 0; box-sizing: border-box; padding: 16px; border-bottom: 1px solid #EDEAE4; display: flex; gap: 14px;">
+    <div style="width: 80px; height: 80px; flex-shrink: 0; border-radius: 10px; overflow: hidden; background: #FFFFFF; border: 1px solid #EDEAE4; box-sizing: border-box;">
+      <img src="assets/102389eae6a1c7d13ee2dd1f682755d9.jpg" alt="The ROO mat with the fitted board on top" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+    </div>
+    <div style="flex-grow: 1; min-width: 0;">
+      <div style="display: flex; justify-content: space-between; gap: 10px;">
+        <p style="font-size: 16px; line-height: 1.3; font-weight: 800;">ROO Mat + fitted board</p>
+        <p style="font-size: 16px; font-weight: 800;">$64.99</p>
+      </div>
+      <p style="margin-top: 3px; font-size: 13px; font-weight: 600; color: #4A463F;">Limited lifetime warranty on the mat</p>
+      <div style="margin-top: 8px; display: flex; align-items: center; border: 1px solid #E2DED6; border-radius: 8px; width: fit-content;">
+        <button type="button" aria-label="Decrease quantity" style="width: 44px; height: 40px; border: 0; background: transparent; font-family: Dosis, sans-serif; font-size: 20px; font-weight: 600; color: #141312; cursor: pointer;">−</button>
+        <span style="width: 28px; text-align: center; font-size: 16px; font-weight: 700;">1</span>
+        <button type="button" aria-label="Increase quantity" style="width: 44px; height: 40px; border: 0; background: transparent; font-family: Dosis, sans-serif; font-size: 20px; font-weight: 600; color: #141312; cursor: pointer;">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- multi-buy nudge -->
+  <div style="flex-shrink: 0; box-sizing: border-box; margin: 14px 16px 0; padding: 12px 14px; border-radius: 10px; background: #FBFAF9; border: 1px solid #EDEAE4; display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+    <p style="font-size: 14px; line-height: 1.4; font-weight: 600;">Add a second as a gift and save <span style="font-weight: 800; color: #0F6B4F;">{{save2}}% on both</span>.</p>
+    <button type="button" style="flex-shrink: 0; height: 44px; padding: 0 14px; border: 2px solid #141312; border-radius: 8px; background: #FFFFFF; font-family: Dosis, sans-serif; font-size: 15px; font-weight: 800; color: #141312; cursor: pointer;">Add</button>
+  </div>
+
+  <!-- delivery choice -->
+  <div style="flex-shrink: 0; box-sizing: border-box; padding: 18px 16px 0;">
+    <h2 style="font-size: 16px; font-weight: 800;">Delivery</h2>
+    <div role="radiogroup" aria-label="Delivery speed" style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+      <button type="button" role="radio" aria-checked="{{groundOn}}" onClick="{{pickGround}}" style="{{groundStyle}}">
+        <span style="{{groundRing}}"><span style="{{groundDot}}"></span></span>
+        <span style="flex-grow: 1; text-align: left;">
+          <span style="display: flex; justify-content: space-between;"><span style="font-size: 16px; font-weight: 800; color: #141312;">Ground</span><span style="font-size: 16px; font-weight: 800; color: #0F6B4F;">Free</span></span>
+          <span style="display: block; margin-top: 2px; font-size: 14px; font-weight: 600; color: #4A463F;">Arrives {{groundRange}}</span>
+        </span>
+      </button>
+      <button type="button" role="radio" aria-checked="{{prioOn}}" onClick="{{pickPrio}}" style="{{prioStyle}}">
+        <span style="{{prioRing}}"><span style="{{prioDot}}"></span></span>
+        <span style="flex-grow: 1; text-align: left;">
+          <span style="display: flex; justify-content: space-between;"><span style="font-size: 16px; font-weight: 800; color: #141312;">Priority</span><span style="font-size: 16px; font-weight: 800; color: #141312;">$21.99</span></span>
+          <span style="display: block; margin-top: 2px; font-size: 14px; font-weight: 600; color: #4A463F;">Arrives {{priorityRange}}</span>
+        </span>
+      </button>
+    </div>
+    <p style="margin-top: 8px; font-size: 13px; font-weight: 600; color: #6A645B;">We ship within 1 business day. Lower 48 states.</p>
+  </div>
+
+  <!-- totals + checkout -->
+  <div style="flex-grow: 1; box-sizing: border-box; padding: 16px 16px 20px; display: flex; flex-direction: column; justify-content: flex-end;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span style="font-size: 16px; font-weight: 600; color: #4A463F;">Subtotal</span>
+      <span style="font-size: 18px; font-weight: 800;">{{total}}</span>
+    </div>
+    <p style="margin-top: 4px; font-size: 13px; font-weight: 600; color: #6A645B;">Taxes calculated at checkout.</p>
+    <button type="button" style="margin-top: 12px; width: 100%; height: 56px; border: 0; border-radius: 10px; background: #1F43D8; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 18px; font-weight: 800; cursor: pointer;">Check out, {{total}}</button>
+    <div style="margin-top: 10px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+      <button type="button" style="height: 44px; border: 0; border-radius: 8px; background: #5A31F4; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">shop</button>
+      <button type="button" style="height: 44px; border: 0; border-radius: 8px; background: #FFC439; color: #10265C; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">PayPal</button>
+      <button type="button" style="height: 44px; border: 0; border-radius: 8px; background: #141312; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">G Pay</button>
+    </div>
+    <p style="margin-top: 12px; font-size: 13px; font-weight: 600; color: #6A645B; text-align: center;">30-day money back. Limited lifetime warranty on the mat.</p>
+  </div>
+
+</div>
+</template>
+<div id="dc-root"></div>
+<script id="dc-logic" type="text/plain" data-props='{"save2":{"editor":"int","default":10,"min":0,"max":30,"unit":"%","section":"Multi-buy"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { speed: 'ground' };
+  }
+  renderVals() {
+    const ground = this.state.speed === 'ground';
+    const today = new Date();
+    const addBiz = (n) => { const x = new Date(today); let k = n; while (k > 0) { x.setDate(x.getDate() + 1); const w = x.getDay(); if (w !== 0 && w !== 6) k--; } return x; };
+    const fmt = (d) => d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    const base = 'width: 100%; min-height: 64px; box-sizing: border-box; padding: 12px 14px; border-radius: 12px; display: flex; align-items: center; gap: 12px; cursor: pointer; font-family: Dosis, sans-serif;';
+    const on = base + ' border: 2px solid #1F43D8; background: #F3F6FF;';
+    const off = base + ' border: 2px solid #E2DED6; background: #FFFFFF;';
+    const ring = 'width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-sizing: border-box; border: 2px solid ';
+    const dot = 'width: 11px; height: 11px; border-radius: 50%; display: block; background: ';
+    return {
+      save2: this.props.save2 ?? 10,
+      groundOn: ground,
+      prioOn: !ground,
+      pickGround: () => this.setState({ speed: 'ground' }),
+      pickPrio: () => this.setState({ speed: 'priority' }),
+      groundStyle: ground ? on : off,
+      prioStyle: ground ? off : on,
+      groundRing: ring + (ground ? '#1F43D8;' : '#C9C3B8;'),
+      prioRing: ring + (ground ? '#C9C3B8;' : '#1F43D8;'),
+      groundDot: dot + (ground ? '#1F43D8;' : 'transparent;'),
+      prioDot: dot + (ground ? 'transparent;' : '#1F43D8;'),
+      groundRange: fmt(addBiz(4)) + ' to ' + fmt(addBiz(5)),
+      priorityRange: fmt(addBiz(2)) + ' to ' + fmt(addBiz(4)),
+      total: ground ? '$64.99' : '$86.98'
+    };
+  }
+}
+</script>
+<script src="dc-lite.js"></script>
+</body>
+</html>

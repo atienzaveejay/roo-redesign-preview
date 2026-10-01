@@ -32,11 +32,11 @@
 <template id="dc-template">
 
 
-<div style="width: 1280px; height: 2560px; box-sizing: border-box; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column;">
+<div style="width: 1280px; height: 2200px; box-sizing: border-box; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column;">
 
   <!-- header -->
   <div style="height: 68px; flex-shrink: 0; box-sizing: border-box; padding: 0 48px; border-bottom: 1px solid #EDEAE4; display: flex; align-items: center; justify-content: space-between;">
-    <div style="font-size: 30px; font-weight: 800; letter-spacing: 0.02em; color: #1F43D8;">ROO</div>
+    <img src="assets/a22d4b691583033b6a113af51606433c.png" alt="ROO" style="height: 30px; width: auto; display: block;">
     <div style="display: flex; gap: 28px;">
       <a href="landing-desktop.html" style="font-size: 15px; font-weight: 600; color: #4A463F; text-decoration: none;">Home</a>
       <a href="shop-desktop.html" style="font-size: 15px; font-weight: 600; color: #4A463F; text-decoration: none;">Shop</a>
@@ -51,10 +51,7 @@
   </div>
 
   <!-- offer ribbon -->
-  <div style="flex-shrink: 0; height: 44px; background: #FFD200; display: flex; align-items: center; justify-content: center; gap: 10px;">
-    <span style="font-size: 16px; font-weight: 800; color: #141312;">{{ribbonText}}</span>
-    <span style="font-size: 15px; font-weight: 600; color: #4A3D00;">$10 instead of $19.99. We make nothing on it.</span>
-  </div>
+  <a href="#offer" style="flex-shrink: 0; height: 44px; background: #FFD200; display: flex; align-items: center; justify-content: center; gap: 12px; text-decoration: none; color: #141312;"><span style="font-size: 16px; font-weight: 800;">Free US shipping on every order</span><span style="font-size: 15px; font-weight: 600; color: #4A3D00;">30-day money-back guarantee</span></a>
 
   <!-- buy area -->
   <div style="flex-shrink: 0; box-sizing: border-box; padding: 44px 48px 0; display: flex; gap: 48px;">
@@ -85,18 +82,17 @@
         <span style="font-size: 15px; font-weight: 500; color: #6A645B;">from 9 verified reviews</span>
       </div>
 
-      <h2 style="margin-top: 26px; font-size: 18px; font-weight: 800;">Choose your setup</h2>
+      <h2 id="offer" style="margin-top: 26px; font-size: 18px; font-weight: 800;">Choose your setup</h2>
 
       <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px;">
         <button type="button" onClick="{{pickBundle}}" aria-pressed="{{bundleSelected}}" style="{{bundleCardStyle}}">
           <span style="{{bundleRingStyle}}"><span style="{{bundleDotStyle}}"></span></span>
-          <span style="width: 62px; height: 62px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #F4F1EC; display: block;">
-            <img src="assets/e83cc622b2e16569b24785467dbc8bcc.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <span style="width: 62px; height: 62px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #FFFFFF; display: block;">
+            <img src="assets/102389eae6a1c7d13ee2dd1f682755d9.jpg" alt="" style="width: 100%; height: 100%; object-fit: contain; display: block;">
           </span>
           <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px; text-align: left; min-width: 0;">
             <span style="display: flex; align-items: center; gap: 8px;">
               <span style="font-size: 18px; font-weight: 800; color: #141312;">Mat + fitted board</span>
-              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: #141312; background: #FFD200; padding: 3px 8px; border-radius: 4px; white-space: nowrap;">{{badgeLabel}}</span>
             </span>
             <span style="display: flex; align-items: baseline; gap: 8px;">
               <span style="font-size: 21px; font-weight: 800; color: #141312;">{{bundlePrice}}</span>
@@ -108,8 +104,8 @@
 
         <button type="button" onClick="{{pickMat}}" aria-pressed="{{matSelected}}" style="{{matCardStyle}}">
           <span style="{{matRingStyle}}"><span style="{{matDotStyle}}"></span></span>
-          <span style="width: 62px; height: 62px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #F4F1EC; display: block;">
-            <img src="assets/f50c0391c4ed7d178e3d0bf184a99718.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <span style="width: 62px; height: 62px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #FFFFFF; display: block;">
+            <img src="assets/71d4d1b5b55c4da983633f45128b3488.jpg" alt="" style="width: 100%; height: 100%; object-fit: contain; display: block;">
           </span>
           <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px; text-align: left; min-width: 0;">
             <span style="font-size: 18px; font-weight: 800; color: #141312;">Mat only</span>
@@ -132,7 +128,7 @@
         <p style="margin-top: 9px; font-size: 14px; line-height: 1.4; font-weight: 500; color: #6A645B;">{{stockFoot}}</p>
       </div>
 
-      <button type="button" style="margin-top: 16px; width: 100%; height: 58px; border: 0; border-radius: 10px; background: #1F43D8; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 19px; font-weight: 800; cursor: pointer;">{{ctaLabel}}</button>
+      <button type="button" style="margin-top: 16px; width: 100%; min-height: 66px; padding: 8px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border: 0; border-radius: 10px; background: #1F43D8; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 19px; font-weight: 800; cursor: pointer;"><span>{{ctaLabel}}</span><span style="font-size: 14px; font-weight: 800; color: #FFD200;">{{ctaSubLine}}</span></button>
       <div style="margin-top: 10px; display: flex; gap: 10px;">
         <button type="button" style="flex-grow: 1; height: 46px; border: 0; border-radius: 8px; background: #5A31F4; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">shop</button>
         <button type="button" style="flex-grow: 1; height: 46px; border: 0; border-radius: 8px; background: #FFC439; color: #10265C; font-family: Dosis, sans-serif; font-size: 16px; font-weight: 800; cursor: pointer;">PayPal</button>
@@ -140,8 +136,8 @@
       </div>
 
       <div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 22px;">
-        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #4A463F;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free US shipping</span>
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; color: #4A463F;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span style="color: #141312;">Free US shipping</span></span>
         <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #4A463F;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6B4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>30-day money back</span>
         <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #4A463F;">
@@ -167,20 +163,6 @@
           </li>
         </ul>
       </div>
-    </div>
-  </div>
-
-  <!-- reason why band -->
-  <div style="flex-shrink: 0; margin-top: 52px; box-sizing: border-box; padding: 40px 48px; background: #FFF9E0; border-top: 1px solid #F2E3A8; border-bottom: 1px solid #F2E3A8; display: flex; gap: 48px; align-items: center;">
-    <div style="width: 300px; height: 210px; flex-shrink: 0; border-radius: 12px; overflow: hidden; background: #FFFFFF;">
-      <img src="assets/1ac77f5319abe6eba3b829616ed362a6.jpg" alt="The fitted ROO rubberwood cutting board" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #141312; background: #FFD200; padding: 4px 9px; border-radius: 4px;">THE OFFER</div>
-      <h2 style="margin-top: 12px; font-size: 32px; line-height: 1.12; font-weight: 800; letter-spacing: -0.01em;">{{reasonHeading}}</h2>
-      <p style="margin-top: 12px; max-width: 720px; font-size: 17px; line-height: 1.55; font-weight: 500; color: #4A463F;">{{reasonBody}}</p>
-      <p style="{{reasonEndStyle}}">{{reasonEnd}}</p>
-      <p style="margin-top: 12px; font-size: 15px; font-weight: 700; color: #141312;">Steve, Founder, ROO</p>
     </div>
   </div>
 
@@ -240,7 +222,7 @@
 </div>
 </template>
 <div id="dc-root"></div>
-<script id="dc-logic" type="text/plain" data-props='{"framing":{"editor":"enum","default":"atcost","options":["atcost","free","saving"],"section":"Offer"},"scarcity":{"editor":"enum","default":"stock","options":["stock","date","off"],"section":"Offer"},"$preview":{"width":1280,"height":2560}}'>
+<script id="dc-logic" type="text/plain" data-props='{"framing":{"editor":"enum","default":"atcost","options":["atcost","free","saving"],"section":"Offer"},"scarcity":{"editor":"enum","default":"stock","options":["stock","date","off"],"section":"Offer"},"$preview":{"width":1280,"height":2200}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
@@ -253,20 +235,20 @@ class Component extends DCLogic {
 
     const scarcities = {
       stock: {
-        ribbon: 'Board at our cost, while these last',
+        ribbon: 'Fitted board at cost, while these last',
         headline: 'Only [N] boards left at cost',
         side: 'of [STARTING STOCK]',
-        foot: 'The offer runs until the boards are gone. We are not restocking them at this price.',
-        end: 'When these boards are gone, the board is $19.99 again.'
+        foot: 'The offer runs while stock lasts.',
+        end: ''
       },
       date: {
-        ribbon: 'Board at our cost until [END DATE]',
+        ribbon: 'Fitted board at cost until [END DATE]',
         headline: 'Offer ends [END DATE]',
         side: '[N] days left',
         foot: 'After that the fitted board goes back to its normal price alongside the mat.',
         end: 'After [END DATE] the board is $19.99 again.'
       },
-      off: { ribbon: 'Buy the mat, get the fitted board at our cost', headline: '', side: '', foot: '', end: '' }
+      off: { ribbon: 'Buy the mat, get the fitted board at cost', headline: '', side: '', foot: '', end: '' }
     };
     const scar = scarcities[scarcity] ?? scarcities.stock;
     const showStrip = scarcity !== 'off';
@@ -274,10 +256,10 @@ class Component extends DCLogic {
     const offers = {
       atcost: {
         price: '$54.99',
-        badge: 'BOARD AT COST',
-        note: 'Board added at our cost: $10, not $19.99. We make nothing on it.',
-        heading: 'Why the board goes in at our cost',
-        body: 'So you get the full ROO setup from day one, especially if you are starting out without a board you trust yet. $10 instead of $19.99, which is our cost. We earn nothing on it.'
+        badge: '',
+        note: 'Fitted board included at cost.',
+        heading: '',
+        body: 'So you get the full ROO setup from day one, especially if you are starting out without a board you trust yet. '
       },
       free: {
         price: '$44.99',
@@ -355,7 +337,7 @@ class Component extends DCLogic {
         : 'display: none;',
 
       ctaLabel: isBundle ? ('Add Mat + Board, ' + offer.price) : 'Add Mat only, $44.99',
-      ctaSubLine: isBundle ? 'Board at our cost. $64.98 bought separately.' : 'Adds the mat on its own.',
+      ctaSubLine: 'Free US shipping',
       ctaSubStyle: isBundle
         ? 'margin-top: 7px; font-size: 13px; font-weight: 600; color: #0F6B4F; text-align: center;'
         : 'margin-top: 7px; font-size: 13px; font-weight: 500; color: #6A645B; text-align: center;',
