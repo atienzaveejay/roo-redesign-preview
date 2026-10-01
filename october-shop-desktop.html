@@ -110,10 +110,7 @@
 <script id="dc-logic" type="text/plain" data-props='{"$preview":{"width":1280,"height":1180}}'>
 class Component extends DCLogic {
   renderVals() {
-    const today = new Date();
-    const addBiz = (n) => { const x = new Date(today); let k = n; while (k > 0) { x.setDate(x.getDate() + 1); const w = x.getDay(); if (w !== 0 && w !== 6) k--; } return x; };
-    const fmt = (d) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-    return { groundRange: fmt(addBiz(4)) + ' to ' + fmt(addBiz(5)) };
+    return { groundRange: 'in 4 to 5 business days' };
   }
 }
 </script>

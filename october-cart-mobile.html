@@ -114,9 +114,6 @@ class Component extends DCLogic {
   }
   renderVals() {
     const ground = this.state.speed === 'ground';
-    const today = new Date();
-    const addBiz = (n) => { const x = new Date(today); let k = n; while (k > 0) { x.setDate(x.getDate() + 1); const w = x.getDay(); if (w !== 0 && w !== 6) k--; } return x; };
-    const fmt = (d) => d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
     const base = 'width: 100%; min-height: 64px; box-sizing: border-box; padding: 12px 14px; border-radius: 12px; display: flex; align-items: center; gap: 12px; cursor: pointer; font-family: Dosis, sans-serif;';
     const on = base + ' border: 2px solid #1F43D8; background: #F3F6FF;';
     const off = base + ' border: 2px solid #E2DED6; background: #FFFFFF;';
@@ -134,8 +131,8 @@ class Component extends DCLogic {
       prioRing: ring + (ground ? '#C9C3B8;' : '#1F43D8;'),
       groundDot: dot + (ground ? '#1F43D8;' : 'transparent;'),
       prioDot: dot + (ground ? 'transparent;' : '#1F43D8;'),
-      groundRange: fmt(addBiz(4)) + ' to ' + fmt(addBiz(5)),
-      priorityRange: fmt(addBiz(2)) + ' to ' + fmt(addBiz(4)),
+      groundRange: 'in 4 to 5 business days',
+      priorityRange: 'in 2 to 4 business days',
       total: ground ? '$64.99' : '$86.98'
     };
   }

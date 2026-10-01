@@ -193,10 +193,6 @@ class Component extends DCLogic {
     const pct = qty === 3 ? s3 : (qty === 2 ? s2 : 0);
     const total = (unit * qty * (1 - pct / 100)).toFixed(2);
 
-    const today = new Date();
-    const addBiz = (n) => { const x = new Date(today); let k = n; while (k > 0) { x.setDate(x.getDate() + 1); const w = x.getDay(); if (w !== 0 && w !== 6) k--; } return x; };
-    const fmt = (d) => d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-
     const cardBase = 'width: 100%; min-height: 64px; box-sizing: border-box; padding: 12px 14px; border-radius: 12px; display: flex; align-items: center; gap: 12px; cursor: pointer; font-family: Dosis, sans-serif; text-align: left;';
     const on = cardBase + ' border: 2px solid #1F43D8; background: #F3F6FF;';
     const off = cardBase + ' border: 2px solid #E2DED6; background: #FFFFFF;';
@@ -224,8 +220,8 @@ class Component extends DCLogic {
       bundleDotStyle: dotBase + (isBundle ? ' background: #1F43D8;' : ' background: transparent;'),
       matDotStyle: dotBase + (isBundle ? ' background: transparent;' : ' background: #1F43D8;'),
       qtyOptions: qtyOptions,
-      groundRange: fmt(addBiz(4)) + ' to ' + fmt(addBiz(5)),
-      priorityRange: fmt(addBiz(2)) + ' to ' + fmt(addBiz(4)),
+      groundRange: 'in 4 to 5 business days',
+      priorityRange: 'in 2 to 4 business days',
       ctaLabel: 'Add to cart, $' + total
     };
   }

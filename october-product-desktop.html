@@ -124,7 +124,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141312" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><path d="M1 4h14v12H1z"/><path d="M15 9h4l4 4v3h-8z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
           <div>
             <p style="font-size: 16px; font-weight: 800;">Free delivery {{groundRange}}</p>
-            <p style="margin-top: 2px; font-size: 14px; font-weight: 500; color: #4A463F;">Ships in 1 business day. Priority ({{priorityRange}}) at checkout.</p>
+            <p style="margin-top: 2px; font-size: 14px; font-weight: 500; color: #4A463F;">Ships in 1 business day. Priority, 2 to 4 business days, is $21.99 at checkout.</p>
           </div>
         </div>
         <div style="display: flex; gap: 14px; align-items: flex-start;">
@@ -299,10 +299,6 @@ class Component extends DCLogic {
     const pct = qty === 3 ? s3 : (qty === 2 ? s2 : 0);
     const total = (unit * qty * (1 - pct / 100)).toFixed(2);
 
-    const today = new Date();
-    const addBiz = (n) => { const x = new Date(today); let k = n; while (k > 0) { x.setDate(x.getDate() + 1); const w = x.getDay(); if (w !== 0 && w !== 6) k--; } return x; };
-    const fmt = (d) => d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-
     const cardBase = 'width: 100%; box-sizing: border-box; padding: 14px 16px; border-radius: 12px; display: flex; align-items: center; gap: 14px; cursor: pointer; font-family: Dosis, sans-serif; text-align: left;';
     const on = cardBase + ' border: 2px solid #1F43D8; background: #F3F6FF;';
     const off = cardBase + ' border: 2px solid #E2DED6; background: #FFFFFF;';
@@ -345,8 +341,8 @@ class Component extends DCLogic {
       bundleDotStyle: dotBase + (isBundle ? ' background: #1F43D8;' : ' background: transparent;'),
       matDotStyle: dotBase + (isBundle ? ' background: transparent;' : ' background: #1F43D8;'),
       qtyOptions: qtyOptions,
-      groundRange: fmt(addBiz(4)) + ' to ' + fmt(addBiz(5)),
-      priorityRange: fmt(addBiz(2)) + ' to ' + fmt(addBiz(4)),
+      groundRange: 'in 4 to 5 business days',
+      priorityRange: 'in 2 to 4 business days',
       ctaLabel: 'Add ' + name + ', $' + total
     };
   }
