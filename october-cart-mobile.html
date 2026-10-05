@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Cart with Priority shipping (mobile) · ROO redesign preview</title>
+<title>Cart with expedited shipping (mobile) · ROO redesign preview</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
 </style>
 </head>
 <body>
-<div class="preview-bar"><a href="index.html">← All pages</a><span>Cart with Priority shipping · Mobile</span></div>
+<div class="preview-bar"><a href="index.html">← All pages</a><span>Cart with expedited shipping · Mobile</span></div>
 <template id="dc-template">
 
 
@@ -73,18 +73,18 @@
         <span style="{{groundRing}}"><span style="{{groundDot}}"></span></span>
         <span style="flex-grow: 1; text-align: left;">
           <span style="display: flex; justify-content: space-between;"><span style="font-size: 16px; font-weight: 800; color: #141312;">Ground</span><span style="font-size: 16px; font-weight: 800; color: #0F6B4F;">Free</span></span>
-          <span style="display: block; margin-top: 2px; font-size: 14px; font-weight: 600; color: #4A463F;">Arrives {{groundRange}}</span>
+          <span style="display: block; margin-top: 2px; font-size: 14px; font-weight: 600; color: #4A463F;">Delivers {{groundRange}}</span>
         </span>
       </button>
       <button type="button" role="radio" aria-checked="{{prioOn}}" onClick="{{pickPrio}}" style="{{prioStyle}}">
         <span style="{{prioRing}}"><span style="{{prioDot}}"></span></span>
         <span style="flex-grow: 1; text-align: left;">
-          <span style="display: flex; justify-content: space-between;"><span style="font-size: 16px; font-weight: 800; color: #141312;">Priority</span><span style="font-size: 16px; font-weight: 800; color: #141312;">$21.99</span></span>
-          <span style="display: block; margin-top: 2px; font-size: 14px; font-weight: 600; color: #4A463F;">Arrives {{priorityRange}}</span>
+          <span style="display: flex; justify-content: space-between;"><span style="font-size: 16px; font-weight: 800; color: #141312;">Expedited</span><span style="font-size: 16px; font-weight: 800; color: #141312;">$21.99</span></span>
+          <span style="display: block; margin-top: 2px; font-size: 14px; font-weight: 600; color: #4A463F;">Delivers {{priorityRange}}</span>
         </span>
       </button>
     </div>
-    <p style="margin-top: 8px; font-size: 13px; font-weight: 600; color: #6A645B;">We ship within 1 business day. Lower 48 states.</p>
+    <p style="margin-top: 8px; font-size: 13px; font-weight: 600; color: #6A645B;">Ships in 1 to 3 days. Lower 48 states.</p>
   </div>
 
   <!-- totals + checkout -->
@@ -131,8 +131,8 @@ class Component extends DCLogic {
       prioRing: ring + (ground ? '#C9C3B8;' : '#1F43D8;'),
       groundDot: dot + (ground ? '#1F43D8;' : 'transparent;'),
       prioDot: dot + (ground ? 'transparent;' : '#1F43D8;'),
-      groundRange: 'in 4 to 5 business days',
-      priorityRange: 'in 2 to 4 business days',
+      groundRange: 'in 2 to 5 days',
+      priorityRange: 'in 1 to 3 days',
       total: ground ? '$64.99' : '$86.98'
     };
   }

@@ -77,12 +77,22 @@
         <button type="button" role="radio" aria-checked="{{q.on}}" onClick="{{q.pick}}" style="{{q.style}}"><span style="font-size: 15px; font-weight: 800;">{{q.label}}</span><span style="font-size: 12px; font-weight: 700; color: #0F6B4F;">{{q.save}}</span></button>
       </sc-for>
     </div>
+    <sc-if value="{{multi}}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px; box-sizing: border-box; padding: 6px 6px 6px 12px; border-radius: 10px; background: #F3F6FF;">
+        <span style="font-size: 14px; font-weight: 700;">All at {{save3}}% off</span>
+        <span style="display: flex; align-items: center; border: 1px solid #C9C3B8; border-radius: 8px; background: #FFFFFF;">
+          <button type="button" aria-label="One fewer" onClick="{{qtyDown}}" style="width: 44px; height: 44px; border: 0; background: transparent; font-family: Dosis, sans-serif; font-size: 22px; font-weight: 700; color: #141312; cursor: pointer;">−</button>
+          <span style="width: 30px; text-align: center; font-size: 17px; font-weight: 800;">{{qty}}</span>
+          <button type="button" aria-label="One more" onClick="{{qtyUp}}" style="width: 44px; height: 44px; border: 0; background: transparent; font-family: Dosis, sans-serif; font-size: 22px; font-weight: 700; color: #141312; cursor: pointer;">+</button>
+        </span>
+      </div>
+    </sc-if>
     <p style="margin-top: 6px; font-size: 13px; line-height: 1.45; font-weight: 500; color: #4A463F;">Gifting? Each mat comes in its own bag, nothing to wrap.</p>
 
     <button type="button" style="margin-top: 14px; width: 100%; min-height: 60px; padding: 8px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; border: 0; border-radius: 10px; background: #1F43D8; color: #FFFFFF; font-family: Dosis, sans-serif; font-size: 18px; font-weight: 800; cursor: pointer;"><span>{{ctaLabel}}</span><span style="font-size: 13px; font-weight: 800; color: #FFD200;">Free US shipping</span></button>
 
     <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid #EDEAE4; display: flex; flex-direction: column; gap: 12px;">
-      <div style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141312" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><path d="M1 4h14v12H1z"/><path d="M15 9h4l4 4v3h-8z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg><div><p style="font-size: 15px; font-weight: 800;">Free delivery {{groundRange}}</p><p style="font-size: 13px; font-weight: 500; color: #4A463F;">Ships in 1 business day. Priority at checkout.</p></div></div>
+      <div style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141312" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><path d="M1 4h14v12H1z"/><path d="M15 9h4l4 4v3h-8z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg><div><p style="font-size: 15px; font-weight: 800;">Free ground shipping, {{groundRange}}</p><p style="font-size: 13px; font-weight: 500; color: #4A463F;">Ships in 1 to 3 days. Expedited $21.99, delivers in 1 to 3 days.</p></div></div>
       <div style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141312" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><div><p style="font-size: 15px; font-weight: 800;">Limited lifetime warranty on the mat</p><p style="font-size: 13px; font-weight: 500; color: #4A463F;">If it tears or splits, we replace it.</p></div></div>
       <div style="display: flex; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141312" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><div><p style="font-size: 15px; font-weight: 800;">30 days to change your mind</p><p style="font-size: 13px; font-weight: 500; color: #4A463F;">Not for you? Money back.</p></div></div>
     </div>
@@ -94,7 +104,7 @@
     <h2 style="margin-top: 6px; font-size: 24px; line-height: 1.15; font-weight: 800;">It works with the board you already own.</h2>
     <div style="margin: 18px auto 0; position: relative; width: 300px; height: 210px;">
       <div style="position: absolute; left: 51px; top: 10px; width: 198px; height: 147px; box-sizing: border-box; border-radius: 10px; background: #1F43D8;"></div>
-      <div style="position: absolute; left: 80px; top: 157px; width: 140px; height: 48px; box-sizing: border-box; border-radius: 0 0 30px 30px; background: #17339F;"></div>
+      <div style="position: absolute; left: 51px; top: 153px; width: 198px; height: 52px; box-sizing: border-box; border-radius: 0 0 30px 30px; background: #17339F;"></div>
       <div style="position: absolute; left: 33px; top: 30px; width: 234px; height: 108px; box-sizing: border-box; border: 2px solid #8A6A3F; border-radius: 8px; background: #D9B88A; box-shadow: 0 5px 12px rgba(20, 19, 18, 0.25);"></div>
     </div>
     <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 6px;">
@@ -113,9 +123,12 @@
   <!-- built to last: ink band -->
   <div style="flex-shrink: 0; margin-top: 48px; box-sizing: border-box; padding: 44px 16px; background: #141312; color: #FFFFFF;">
     <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #D4D4D4;">BUILT TO LAST</div>
-    <h2 style="margin-top: 8px; font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.015em;">The first ROO ever made is still in use.</h2>
-    <div style="margin-top: 20px; height: 220px; border-radius: 14px; background: #2A2825; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 20px; text-align: center; font-size: 14px; font-weight: 700; color: #D4D4D4;">[PHOTO: Steve's original mat after six years of daily use]</div>
-    <p style="margin-top: 14px; font-size: 15px; line-height: 1.55; font-weight: 500; color: #D4D4D4;">Six years and thousands of dinners in, it still holds the board still.</p>
+    <h2 style="margin-top: 8px; font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.015em;">Three years of daily use. Still looks new.</h2>
+    <div style="margin-top: 20px; height: 200px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px;">
+      <figure style="margin: 0; position: relative; border-radius: 12px; overflow: hidden; background: #2A2825;"><img src="assets/c57c37aa2de257c82466e1b227caab19.jpg" alt="A ROO mat on the counter in 2023" style="width: 100%; height: 100%; object-fit: cover; display: block;"><figcaption style="position: absolute; left: 8px; bottom: 8px; padding: 3px 8px; border-radius: 999px; background: #141312; font-size: 12px; font-weight: 800; color: #FFFFFF;">2023</figcaption></figure>
+      <figure style="margin: 0; position: relative; border-radius: 12px; background: #2A2825; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 12px; text-align: center; font-size: 13px; font-weight: 700; color: #D4D4D4;">[PHOTO: Steve's home mat today]<figcaption style="position: absolute; left: 8px; bottom: 8px; padding: 3px 8px; border-radius: 999px; background: #FFD200; font-size: 12px; font-weight: 800; color: #141312;">Today</figcaption></figure>
+    </div>
+    <p style="margin-top: 14px; font-size: 15px; line-height: 1.55; font-weight: 500; color: #D4D4D4;">The ROO in Steve's kitchen has been in daily use for about three years and still looks brand new.</p>
     <div style="margin-top: 20px; box-sizing: border-box; padding: 18px; border-radius: 14px; background: #1F43D8; display: flex; gap: 14px; align-items: center;">
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFD200" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
       <p style="font-size: 15px; line-height: 1.45; font-weight: 600;"><span style="font-weight: 800;">Limited lifetime warranty.</span> Tears or splits in normal use? Send a photo, we send a new one.</p>
@@ -125,15 +138,16 @@
       <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #2E2C29; padding-bottom: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Material</span><span style="font-weight: 800;">[GRADE] food-grade silicone</span></div>
       <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #2E2C29; padding-bottom: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Build</span><span style="font-weight: 800;">One piece, no clips</span></div>
       <div style="display: flex; justify-content: space-between;"><span style="font-weight: 600; color: #D4D4D4;">Thickness · weight</span><span style="font-weight: 800;">[X] mm · [X] lb</span></div>
+      <div style="display: flex; justify-content: space-between; border-top: 1px solid #2E2C29; padding-top: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Heat</span><span style="font-weight: 800;">Rated to [TEMP]. Not a trivet.</span></div>
     </div>
   </div>
 
   <!-- founder -->
   <div style="flex-shrink: 0; box-sizing: border-box; padding: 48px 16px 0;">
-    <div style="height: 300px; border-radius: 14px; background: #EDEAE4; display: flex; align-items: center; justify-content: center; box-sizing: border-box; padding: 24px; text-align: center; font-size: 14px; font-weight: 700; color: #6A645B;">[PHOTO: Steve at his own counter, prepping on the ROO mat]</div>
+    <div style="height: 300px; border-radius: 14px; overflow: hidden; background: #EDEAE4;"><img src="assets/a44ad1d9c586397f89fcd9aec38b12c0.jpg" alt="Slicing a red onion on a board resting on the ROO mat, scraps in the pouch" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
     <div style="margin-top: 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #6A645B;">WHY ROO EXISTS</div>
     <h2 style="margin-top: 6px; font-size: 26px; line-height: 1.12; font-weight: 800;">&ldquo;I made the first one to fix my own kitchen.&rdquo;</h2>
-    <p style="margin-top: 12px; font-size: 16px; line-height: 1.6; font-weight: 500; color: #4A463F;">My board slid and scraps took over the counter every time I cooked, so I made a mat that holds the board still with a pouch for the mess. Six years later I was still using it every day, so I decided it belonged in other kitchens too.</p>
+    <p style="margin-top: 12px; font-size: 16px; line-height: 1.6; font-weight: 500; color: #4A463F;">My board slid and scraps took over the counter every time I cooked, so I made a mat that holds the board still with a pouch for the mess. I still use one at home every day, and I decided it belonged in other kitchens too.</p>
     <p style="margin-top: 14px; font-size: 16px; font-weight: 800;">Steve</p>
     <p style="font-size: 14px; font-weight: 600; color: #6A645B;">Founder and product engineer</p>
   </div>
@@ -154,7 +168,7 @@
       </div>
       <div style="border-top: 3px solid #1F43D8; padding-top: 10px;">
         <h3 style="font-size: 17px; font-weight: 800;">Skip the dishwasher</h3>
-        <p style="margin-top: 4px; font-size: 15px; line-height: 1.5; font-weight: 500; color: #4A463F;">It can take the top rack, but hand rinsing keeps it like new for longer.</p>
+        <p style="margin-top: 4px; font-size: 15px; line-height: 1.5; font-weight: 500; color: #4A463F;">It can take the top rack, but hand rinsing keeps it like new for longer. Not a trivet: keep hot pans off it.</p>
       </div>
     </div>
   </div>
@@ -170,7 +184,7 @@
     <div style="margin-top: 16px; box-sizing: border-box; padding: 18px; border-radius: 14px; border: 1px solid #EDEAE4;">
       <span aria-hidden="true" style="font-size: 14px; color: #A87400;">★★★★★</span>
       <p style="margin-top: 6px; font-size: 16px; line-height: 1.4; font-weight: 800;">Keeps my cutting board from sliding around and allows me to quickly clear debris</p>
-      <p style="margin-top: 10px; font-size: 13px; font-weight: 700; color: #4A463F;">Thomas Perri</p>
+      <p style="margin-top: 10px; font-size: 13px; font-weight: 700; color: #4A463F;">Thomas</p>
       <p style="font-size: 12px; font-weight: 600; color: #0F6B4F;">Verified buyer · Mat</p>
     </div>
   </div>
@@ -190,7 +204,7 @@ class Component extends DCLogic {
     const s2 = this.props.save2 ?? 10;
     const s3 = this.props.save3 ?? 15;
     const unit = isBundle ? 64.99 : 49.99;
-    const pct = qty === 3 ? s3 : (qty === 2 ? s2 : 0);
+    const pct = qty >= 3 ? s3 : (qty === 2 ? s2 : 0);
     const total = (unit * qty * (1 - pct / 100)).toFixed(2);
 
     const cardBase = 'width: 100%; min-height: 64px; box-sizing: border-box; padding: 12px 14px; border-radius: 12px; display: flex; align-items: center; gap: 12px; cursor: pointer; font-family: Dosis, sans-serif; text-align: left;';
@@ -200,13 +214,16 @@ class Component extends DCLogic {
     const dotBase = 'width: 11px; height: 11px; border-radius: 50%; display: block;';
 
     const qBase = 'min-height: 52px; box-sizing: border-box; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; font-family: Dosis, sans-serif; color: #141312;';
-    const qtyOptions = [1, 2, 3].map((n) => ({
-      label: n === 1 ? '1' : (n + ' pack'),
-      save: n === 1 ? 'Full price' : ('Save ' + (n === 2 ? s2 : s3) + '%'),
-      on: qty === n,
-      pick: () => this.setState({ qty: n }),
-      style: qBase + (qty === n ? ' border: 2px solid #1F43D8; background: #F3F6FF;' : ' border: 2px solid #E2DED6; background: #FFFFFF;')
-    }));
+    const qtyOptions = [1, 2, 3].map((n) => {
+      const on = n === 3 ? qty >= 3 : qty === n;
+      return {
+        label: n === 1 ? '1' : (n === 2 ? '2' : '3+'),
+        save: n === 1 ? 'Full price' : ('Save ' + (n === 2 ? s2 : s3) + '%'),
+        on: on,
+        pick: () => this.setState({ qty: n === 3 ? Math.max(3, qty) : n }),
+        style: qBase + (on ? ' border: 2px solid #1F43D8; background: #F3F6FF;' : ' border: 2px solid #E2DED6; background: #FFFFFF;')
+      };
+    });
 
     return {
       bundleSelected: isBundle,
@@ -219,9 +236,14 @@ class Component extends DCLogic {
       matRingStyle: ringBase + (isBundle ? ' border: 2px solid #C9C3B8;' : ' border: 2px solid #1F43D8;'),
       bundleDotStyle: dotBase + (isBundle ? ' background: #1F43D8;' : ' background: transparent;'),
       matDotStyle: dotBase + (isBundle ? ' background: transparent;' : ' background: #1F43D8;'),
+      qty: qty,
+      multi: qty >= 3,
+      save3: s3,
+      qtyDown: () => this.setState({ qty: Math.max(3, qty - 1) }),
+      qtyUp: () => this.setState({ qty: Math.min(20, qty + 1) }),
       qtyOptions: qtyOptions,
-      groundRange: 'in 4 to 5 business days',
-      priorityRange: 'in 2 to 4 business days',
+      groundRange: 'delivers in 2 to 5 days',
+      priorityRange: 'delivers in 1 to 3 days',
       ctaLabel: 'Add to cart, $' + total
     };
   }
