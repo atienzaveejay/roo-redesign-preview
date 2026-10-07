@@ -253,11 +253,11 @@
       </div>
       <div style="border-top: 3px solid #1F43D8; padding-top: 16px;">
         <h3 style="font-size: 19px; font-weight: 800;">Skip the dishwasher</h3>
-        <p style="margin-top: 8px; font-size: 16px; line-height: 1.5; font-weight: 500; color: #4A463F;">It can take the top rack, but it does not need it, and hand rinsing keeps it like new for longer. Dry flat, roll into its bag. Keep hot pans off it: it is not a trivet.</p>
+        <p style="margin-top: 8px; font-size: 16px; line-height: 1.5; font-weight: 500; color: #4A463F;">It can take the top rack, but it does not need it, and hand rinsing keeps it like new for longer. Air dry, roll into its bag. Keep hot pans off it: it is not a trivet.</p>
       </div>
       </div>
     </div>
-    <p style="margin-top: 20px; font-size: 15px; line-height: 1.5; font-weight: 600; color: #4A463F;">Fitted board: hand wash, dry upright, oil it now and then. Never soak it or put it in the dishwasher.</p>
+    <p style="margin-top: 20px; font-size: 15px; line-height: 1.5; font-weight: 600; color: #4A463F;">Fitted board: hand wash, air dry, oil it now and then. Never soak it or put it in the dishwasher.</p>
   </div>
 
   <!-- reviews -->
@@ -334,7 +334,7 @@ class Component extends DCLogic {
     });
 
     const matPhotos = [{src:'assets/71d4d1b5b55c4da983633f45128b3488.jpg',alt:'The ROO silicone mat with its built-in scrap pouch, on white'},{src:'assets/0ed375250352db2160e553152928363a.jpg',alt:'Carrot peels swept off the board into the ROO pouch'},{src:'assets/32ae874e23f983e9a5c68cb2b7946003.jpg',alt:'A home cook prepping at the counter with the ROO pouch over the edge'},{src:'assets/ea486be0547a0081e77cd176b99dfb6f.jpg',alt:'ROO mat dimensions: fits any board up to 16 inches, 13.5 by 10 inches overall, pouch 3.25 inches deep'},{src:'assets/48383102b2a4cb70c5ee726285bff111.jpg',alt:'Potato peels filling the 7-cup ROO pouch'},{src:'assets/6e28a35f49b156c9f8ed1a34d46eba7e.jpg',alt:'What is included: one ROO mat and one drawstring bag'},{src:'assets/52db53bf85450bc317117dc7d104121f.jpg',alt:'Care in three steps: lift it out, tip it into the bin, rinse'}];
-    const bundlePhotos = [{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-1-hero-v2_c846aced-ff87-4311-8d00-eeed0d87885f.png?v=1790607941',alt:'The ROO Mat + Board: the rubberwood cutting board sitting in the blue ROO mat'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-2-what-s-included-v2_f1a9b050-0323-4709-80e9-21ee659ac706.png?v=1790607941',alt:'Everything in one box: the ROO mat, the fitted board and the drawstring bag'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-4-the-fit-v2.png?v=1790648264',alt:'Any board works, ours fits best: the fitted board in the ROO mat'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-5-the-mechanic_7e34c50e-6f84-4453-97ed-6cc5b55d1e10.png?v=1790607941',alt:'Carrot peels swept off the board into the ROO mat\'s pouch'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-6-capacity_7cd77a22-cb36-4c9e-89ad-1026dd4bed96.png?v=1790607941',alt:'Potato and garlic peels filling the ROO mat\'s 7-cup pouch'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-7-care_0163f577-3bae-407e-affa-c5185fa193e2.png?v=1790607941',alt:'Care for the mat and the board'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROOmatatangle.jpg?v=1725649331',alt:'The ROO mat on a kitchen counter with its pouch over the edge'}];
+    const bundlePhotos = [{src:'assets/266aa302076bf809bcb764114aaa8664.png',alt:'The ROO Mat + Board: the rubberwood cutting board sitting in the blue ROO mat'},{src:'assets/51d6d27a5026edc4317a5bff5ad9217c.png',alt:'Everything in one box: the ROO mat, the fitted board and the drawstring bag'},{src:'assets/c16aaf5478aab4ceffcbfa9a6feaac59.png',alt:'Any board works, ours fits best: the fitted board in the ROO mat'},{src:'assets/aa876af811095eafe1c5bfca703e052a.png',alt:'Carrot peels swept off the board into the ROO pouch'},{src:'assets/94a77a8175fcb5fc56e61d8d09e751b1.png',alt:'Potato and garlic peels filling the 7-cup ROO pouch'},{src:'assets/ee4cfd8ebef95c959cc546f98d7fe03f.jpg',alt:'The ROO mat on a kitchen counter with its pouch over the edge'}];
     const photos = isBundle ? bundlePhotos : matPhotos;
     const img = Math.min(this.state.img ?? 0, photos.length - 1);
     const gallery = photos.map((p, i) => ({

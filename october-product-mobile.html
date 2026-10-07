@@ -31,7 +31,7 @@
 <template id="dc-template">
 
 
-<div style="width: 390px; height: 3920px; box-sizing: border-box; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column;">
+<div style="width: 390px; height: 3960px; box-sizing: border-box; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column;">
 
   <!-- header -->
   <div style="height: 56px; flex-shrink: 0; box-sizing: border-box; padding: 0 6px 0 16px; border-bottom: 1px solid #EDEAE4; display: flex; align-items: center; justify-content: space-between;">
@@ -138,6 +138,7 @@
       <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #2E2C29; padding-bottom: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Material</span><span style="font-weight: 800;">Food-grade silicone</span></div>
       <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #2E2C29; padding-bottom: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Build</span><span style="font-weight: 800;">One-piece construction</span></div>
       <div style="display: flex; justify-content: space-between;"><span style="font-weight: 600; color: #D4D4D4;">Thickness · weight</span><span style="font-weight: 800;">[X] mm · [X] lb</span></div>
+      <div style="display: flex; justify-content: space-between; border-top: 1px solid #2E2C29; padding-top: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Size · pouch</span><span style="font-weight: 800;">13.5 x 14 in · 7 cups</span></div>
       <div style="display: flex; justify-content: space-between; border-top: 1px solid #2E2C29; padding-top: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Heat</span><span style="font-weight: 800;">Not designed for heat. Don&rsquo;t use as a trivet.</span></div>
     </div>
   </div>
@@ -192,7 +193,7 @@
 </div>
 </template>
 <div id="dc-root"></div>
-<script id="dc-logic" type="text/plain" data-props='{"save2":{"editor":"int","default":10,"min":0,"max":30,"unit":"%","section":"Multi-buy"},"save3":{"editor":"int","default":15,"min":0,"max":30,"unit":"%","section":"Multi-buy"},"$preview":{"width":390,"height":3920}}'>
+<script id="dc-logic" type="text/plain" data-props='{"save2":{"editor":"int","default":10,"min":0,"max":30,"unit":"%","section":"Multi-buy"},"save3":{"editor":"int","default":15,"min":0,"max":30,"unit":"%","section":"Multi-buy"},"$preview":{"width":390,"height":3960}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
@@ -226,10 +227,10 @@ class Component extends DCLogic {
     });
 
     return {
-      heroSrc: isBundle ? 'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-1-hero-v2_c846aced-ff87-4311-8d00-eeed0d87885f.png?v=1790607941' : 'assets/71d4d1b5b55c4da983633f45128b3488.jpg',
-      heroAlt: isBundle ? 'The ROO Mat + Board: the rubberwood cutting board sitting in the blue ROO mat' : 'The ROO silicone mat with its built-in scrap pouch, on white',
       bundleSelected: isBundle,
       matSelected: !isBundle,
+      heroSrc: isBundle ? 'assets/266aa302076bf809bcb764114aaa8664.png' : 'assets/71d4d1b5b55c4da983633f45128b3488.jpg',
+      heroAlt: isBundle ? 'The ROO Mat + Board: the rubberwood cutting board sitting in the blue ROO mat' : 'The ROO silicone mat with its built-in scrap pouch, on white',
       pickBundle: () => this.setState({ pick: 'bundle' }),
       pickMat: () => this.setState({ pick: 'mat' }),
       bundleCardStyle: isBundle ? on : off,
