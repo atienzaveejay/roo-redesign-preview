@@ -43,7 +43,7 @@
   <a href="october-warranty.html" style="flex-shrink: 0; min-height: 40px; box-sizing: border-box; padding: 8px 12px; background: #FFD200; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #141312; font-size: 14px; font-weight: 800; text-align: center;">Free US shipping. Lifetime warranty on the mat.</a>
 
   <div style="flex-shrink: 0; height: 360px; background: #FFFFFF; border-bottom: 1px solid #EDEAE4;">
-    <img src="assets/71d4d1b5b55c4da983633f45128b3488.jpg" alt="The ROO silicone mat with its built-in scrap pouch, on white" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+    <img src="{{heroSrc}}" alt="{{heroAlt}}" style="width: 100%; height: 100%; object-fit: contain; display: block;">
   </div>
 
   <!-- buy box -->
@@ -135,10 +135,10 @@
     </div>
     <a href="october-warranty.html" style="margin-top: 6px; display: inline-flex; min-height: 44px; align-items: center; font-size: 15px; font-weight: 800; color: #FFD200;">Read the warranty</a>
     <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
-      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #2E2C29; padding-bottom: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Material</span><span style="font-weight: 800;">100% food-grade, BPA-free</span></div>
-      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #2E2C29; padding-bottom: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Build</span><span style="font-weight: 800;">One piece, no clips</span></div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #2E2C29; padding-bottom: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Material</span><span style="font-weight: 800;">Food-grade silicone</span></div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #2E2C29; padding-bottom: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Build</span><span style="font-weight: 800;">One-piece construction</span></div>
       <div style="display: flex; justify-content: space-between;"><span style="font-weight: 600; color: #D4D4D4;">Thickness · weight</span><span style="font-weight: 800;">[X] mm · [X] lb</span></div>
-      <div style="display: flex; justify-content: space-between; border-top: 1px solid #2E2C29; padding-top: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Heat</span><span style="font-weight: 800;">Rated to [TEMP]. Not a trivet.</span></div>
+      <div style="display: flex; justify-content: space-between; border-top: 1px solid #2E2C29; padding-top: 10px;"><span style="font-weight: 600; color: #D4D4D4;">Heat</span><span style="font-weight: 800;">Not designed for heat. Don&rsquo;t use as a trivet.</span></div>
     </div>
   </div>
 
@@ -226,6 +226,8 @@ class Component extends DCLogic {
     });
 
     return {
+      heroSrc: isBundle ? 'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-1-hero-v2_c846aced-ff87-4311-8d00-eeed0d87885f.png?v=1790607941' : 'assets/71d4d1b5b55c4da983633f45128b3488.jpg',
+      heroAlt: isBundle ? 'The ROO Mat + Board: the rubberwood cutting board sitting in the blue ROO mat' : 'The ROO silicone mat with its built-in scrap pouch, on white',
       bundleSelected: isBundle,
       matSelected: !isBundle,
       pickBundle: () => this.setState({ pick: 'bundle' }),

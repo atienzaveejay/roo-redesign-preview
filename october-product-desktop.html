@@ -206,16 +206,16 @@
           <span style="font-size: 16px; font-weight: 600; color: #DCE3FF;">warranty on the mat</span>
         </div>
         <h3 style="margin-top: 20px; font-size: 21px; font-weight: 800;">We stand behind it</h3>
-        <p style="margin-top: 8px; font-size: 16px; line-height: 1.55; font-weight: 500; color: #D4D4D4;">If it tears, cracks or the pouch rips in normal home use, send a photo and we send a new one. No need to post the old one back.</p>
+        <p style="margin-top: 8px; font-size: 16px; line-height: 1.55; font-weight: 500; color: #D4D4D4;">If it tears, cracks or the pouch rips in normal home use, send a photo and we send a new one. No need to send the old one back.</p>
         <a href="october-warranty.html" style="margin-top: 10px; display: inline-flex; min-height: 44px; align-items: center; font-size: 16px; font-weight: 800; color: #FFD200;">Read the warranty</a>
       </div>
       <div>
         <div style="height: 260px; border-radius: 14px; border: 1px solid #3A3733; box-sizing: border-box; padding: 20px 28px; display: flex; flex-direction: column; justify-content: center; gap: 11px;">
-          <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; border-bottom: 1px solid #2E2C29; padding-bottom: 12px;"><span style="font-weight: 600; color: #D4D4D4;">Material</span><span style="font-weight: 800;">100% food-grade silicone, BPA-free</span></div>
-          <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; border-bottom: 1px solid #2E2C29; padding-bottom: 12px;"><span style="font-weight: 600; color: #D4D4D4;">Build</span><span style="font-weight: 800;">One piece, no seams or clips</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; border-bottom: 1px solid #2E2C29; padding-bottom: 12px;"><span style="font-weight: 600; color: #D4D4D4;">Material</span><span style="font-weight: 800;">Food-grade silicone</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; border-bottom: 1px solid #2E2C29; padding-bottom: 12px;"><span style="font-weight: 600; color: #D4D4D4;">Build</span><span style="font-weight: 800;">One-piece construction</span></div>
           <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; border-bottom: 1px solid #2E2C29; padding-bottom: 12px;"><span style="font-weight: 600; color: #D4D4D4;">Thickness · weight</span><span style="font-weight: 800;">[X] mm · [X] lb</span></div>
-          <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px;"><span style="font-weight: 600; color: #D4D4D4;">Size · pouch</span><span style="font-weight: 800;">13.5 x 10 in · 7 cups</span></div>
-          <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; border-top: 1px solid #2E2C29; padding-top: 12px;"><span style="font-weight: 600; color: #D4D4D4;">Heat</span><span style="font-weight: 800;">Rated to [TEMP]. Not a trivet.</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px;"><span style="font-weight: 600; color: #D4D4D4;">Size · pouch</span><span style="font-weight: 800;">13.5 x 14 in · 7 cups</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 16px; border-top: 1px solid #2E2C29; padding-top: 12px;"><span style="font-weight: 600; color: #D4D4D4;">Heat</span><span style="font-weight: 800;">Not designed for heat. Don&rsquo;t use as a trivet.</span></div>
         </div>
         <h3 style="margin-top: 20px; font-size: 21px; font-weight: 800;">Nothing to wear out</h3>
         <p style="margin-top: 8px; font-size: 16px; line-height: 1.55; font-weight: 500; color: #D4D4D4;">No hinges, arms or snap-on parts. Just thick silicone that grips, holds and rolls up.</p>
@@ -326,15 +326,17 @@ class Component extends DCLogic {
       const on = n === 3 ? qty >= 3 : qty === n;
       return {
         label: n === 1 ? '1' : (n === 2 ? '2' : '3 or more'),
-        save: n === 1 ? 'Full price' : ('Save ' + (n === 2 ? s2 : s3) + '% on each'),
+        save: n === 1 ? 'Full price' : ('Save ' + (n === 2 ? s2 : s3) + '%'),
         on: on,
         pick: () => this.setState({ qty: n === 3 ? Math.max(3, qty) : n }),
         style: qBase + (on ? ' border: 2px solid #1F43D8; background: #F3F6FF;' : ' border: 2px solid #E2DED6; background: #FFFFFF;')
       };
     });
 
-    const photos = [{src:'assets/71d4d1b5b55c4da983633f45128b3488.jpg',alt:'The ROO silicone mat with its built-in scrap pouch, on white'},{src:'assets/0ed375250352db2160e553152928363a.jpg',alt:'Carrot peels swept off the board into the ROO pouch'},{src:'assets/32ae874e23f983e9a5c68cb2b7946003.jpg',alt:'A home cook prepping at the counter with the ROO pouch over the edge'},{src:'assets/ea486be0547a0081e77cd176b99dfb6f.jpg',alt:'ROO mat dimensions: fits any board up to 16 inches, 13.5 by 10 inches overall, pouch 3.25 inches deep'},{src:'assets/48383102b2a4cb70c5ee726285bff111.jpg',alt:'Potato peels filling the 7-cup ROO pouch'},{src:'assets/6e28a35f49b156c9f8ed1a34d46eba7e.jpg',alt:'What is included: one ROO mat and one drawstring bag'},{src:'assets/52db53bf85450bc317117dc7d104121f.jpg',alt:'Care in three steps: lift it out, tip it into the bin, rinse'}];
-    const img = this.state.img ?? 0;
+    const matPhotos = [{src:'assets/71d4d1b5b55c4da983633f45128b3488.jpg',alt:'The ROO silicone mat with its built-in scrap pouch, on white'},{src:'assets/0ed375250352db2160e553152928363a.jpg',alt:'Carrot peels swept off the board into the ROO pouch'},{src:'assets/32ae874e23f983e9a5c68cb2b7946003.jpg',alt:'A home cook prepping at the counter with the ROO pouch over the edge'},{src:'assets/ea486be0547a0081e77cd176b99dfb6f.jpg',alt:'ROO mat dimensions: fits any board up to 16 inches, 13.5 by 10 inches overall, pouch 3.25 inches deep'},{src:'assets/48383102b2a4cb70c5ee726285bff111.jpg',alt:'Potato peels filling the 7-cup ROO pouch'},{src:'assets/6e28a35f49b156c9f8ed1a34d46eba7e.jpg',alt:'What is included: one ROO mat and one drawstring bag'},{src:'assets/52db53bf85450bc317117dc7d104121f.jpg',alt:'Care in three steps: lift it out, tip it into the bin, rinse'}];
+    const bundlePhotos = [{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-1-hero-v2_c846aced-ff87-4311-8d00-eeed0d87885f.png?v=1790607941',alt:'The ROO Mat + Board: the rubberwood cutting board sitting in the blue ROO mat'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-2-what-s-included-v2_f1a9b050-0323-4709-80e9-21ee659ac706.png?v=1790607941',alt:'Everything in one box: the ROO mat, the fitted board and the drawstring bag'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-4-the-fit-v2.png?v=1790648264',alt:'Any board works, ours fits best: the fitted board in the ROO mat'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-5-the-mechanic_7e34c50e-6f84-4453-97ed-6cc5b55d1e10.png?v=1790607941',alt:'Carrot peels swept off the board into the ROO mat\'s pouch'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-6-capacity_7cd77a22-cb36-4c9e-89ad-1026dd4bed96.png?v=1790607941',alt:'Potato and garlic peels filling the ROO mat\'s 7-cup pouch'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROO-bundle-7-care_0163f577-3bae-407e-affa-c5185fa193e2.png?v=1790607941',alt:'Care for the mat and the board'},{src:'https://cdn.shopify.com/s/files/1/0851/9843/8712/files/ROOmatatangle.jpg?v=1725649331',alt:'The ROO mat on a kitchen counter with its pouch over the edge'}];
+    const photos = isBundle ? bundlePhotos : matPhotos;
+    const img = Math.min(this.state.img ?? 0, photos.length - 1);
     const gallery = photos.map((p, i) => ({
       src: p.src,
       label: 'Show photo ' + (i + 1) + ' of ' + photos.length,
@@ -349,8 +351,8 @@ class Component extends DCLogic {
       gallery: gallery,
       bundleSelected: isBundle,
       matSelected: !isBundle,
-      pickBundle: () => this.setState({ pick: 'bundle' }),
-      pickMat: () => this.setState({ pick: 'mat' }),
+      pickBundle: () => this.setState({ pick: 'bundle', img: 0 }),
+      pickMat: () => this.setState({ pick: 'mat', img: 0 }),
       bundleCardStyle: isBundle ? on : off,
       matCardStyle: isBundle ? off : on,
       bundleRingStyle: isBundle ? ringOn : ringOff,
